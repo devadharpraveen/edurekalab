@@ -14,8 +14,8 @@
           path: /home/edureka/project/edurekalab
           pull: false
         source: build
-    -name: Tag and Push image to registry 
-     docker_image:
+    - name: Tag and Push image to registry 
+      docker_image:
          name: simple-docker-image
          repository: devadharpraveenedureka/devadharpraveenedureka
          tag: latest
