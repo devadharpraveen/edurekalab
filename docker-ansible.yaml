@@ -19,7 +19,7 @@
          name: simple-docker-image
          repository: devadharpraveenedureka/devadharpraveenedureka
          tag: latest
-         psuh: true
+         push: true
     - name: Run Docker container using simple-docker-image
       docker_container:
         name: simple-docker-container
