@@ -1,0 +1,37 @@
+- hosts: 'KUBERNETES'
+
+  tasks:
+
+  - name: "Install kubernetes python package" #This will be installed on the remote host.
+
+    pip:
+
+      name: kubernetes
+
+      state: present
+
+# Create a test namespace on the cluster without any manifest fies. This is an added advantage on ansible.
+
+  - name: "Create a k8s namespace"
+
+    k8s:
+
+      name: test
+
+      api_version: v1
+
+      kind: Namespace
+
+      state: present
+
+# Creating a Kubernetes pod in test using file stored on local.
+
+  - name: "Create a Deployment and service"
+
+    k8s:
+
+      state: present
+
+      namespace: test
+
+      src: /home/edureka/project/edurekalab/kubernetes-manifest.yaml
